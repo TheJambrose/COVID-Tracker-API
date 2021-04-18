@@ -18,8 +18,12 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <h1>COVID-19 Data tracking</h1>
-    <p>This is a test run to see how to pull <span id="selectMe">data</span> from the API provided at <a
+    <p>You can use this site to pull data from The Atlantic's API, kindly proivided at:<a
             href="https://covidtracking.com/data/api">https://covidtracking.com/data/api</a>.</p>
+    <p>Unfourtunatly, this data is no longer being updated after March 03, 2021, and the API is set to expire in May
+        of 2020.</p>
+    <p>If you attempt to run this</p>
+
 
     <form id="date-form" class="form-horizontal">
         <fieldset>
@@ -29,8 +33,7 @@
         </fieldset>
     </form>
 
-    <button class="btn btn-default" onclick="otherFunction()">TryAgain</button>
-    <button type="submit" onclick="getData()" class="btn btn-primary">Submit</button>
+    <button onclick="getData()" class="btn btn-primary">Submit</button>
     <div id="output">something might show here?</div>
 
     <script src="script.js" async defer></script>
