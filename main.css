@@ -1,14 +1,103 @@
-table {
-    table-layout: auto;
-    /* width: 100%; */
-    /* border: 1px black solid; */
-    text-align: center;
-    border-spacing: 1px;
-    background-color: black;
-    min-width: 50%;
+html, body, main {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+a {
+    color: #009879;
 }
 
-td, th {
+a:visited {
+    color: #02745d;
+}
+h1 {
+    /* height: 1.5em; */
+    top: 0;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color:#009879;
+    color: #ffffff;
+    min-width: 400px;
+}
 
-    background-color: white;
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+    /* width: 90%;    */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main p {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .btn {
+    margin: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(19, 136, 252);
+    color: white;
+    border: 1px dodgerblue solid;
+    border-radius: 5px;
+}
+
+section .btn:active {
+    background-color: rgb(0, 106, 213);
+}
+
+
+#tableOutput {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+/* begin Table Styling */
+
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    text-align: center;
+    background-color: ;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+}
+
+table caption {
+    font-size: 1.1em;
+}
+thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    border: 1px solid #009879;
+    /* text-align: left; */
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border: 1px solid #009879;
+}
+/* if I ever make this work with larger data sets */
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #026752;
 }

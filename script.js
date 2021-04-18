@@ -9,13 +9,20 @@ async function getData() {
     //make sure a date is selected
     if (!(Object.keys(dateSelected.date).length === 0)) {
         let dateAsString = dateSelected.date;
-        let outputArea = document.getElementById("output");
+        let outputArea = document.getElementById("tableOutput");
 
+        //once the json object resolves we can use it
         jsonObj = await getCovidData(apiUrlTxData, dateAsString);
         console.log(jsonObj);
         if (jsonObj.error) {
             return alert("There was an error while fetching the data for this date. Please check that you have selected a date on, or between, March 03, 2020 and March 07, 2021")
         }
+        //remove the placeholder text if a table will get created.
+        if (outputArea.innerHTML == "Your table will appear here.") {
+            outputArea.innerHTML = "";
+        }
+
+        //make the dang table
         makeTable(jsonObj)
     } else {
         alert("Please select a date.")
@@ -27,7 +34,7 @@ async function getData() {
 function getCovidData(apiUrl, dateString) {
     async function apiResponse(fullAPIurl) {
         const response = await fetch(fullAPIurl);
-        let jsonResponse = await response.json();
+        let jsonResponse = response.json();
         // jsonObj = data;
         return jsonResponse;
     }
@@ -55,7 +62,7 @@ function makeTable(someJsonObj) {
     }
     //create a table
     let newTable = document.createElement("table");
-    let outputArea = document.getElementById("output");
+    let outputArea = document.getElementById("tableOutput");
     // create table Caption
     let caption = newTable.createCaption();
     caption.textContent = `Total COVID case data for ${jsonObj.data.state} as of ${jsonObj.data.date}`;
